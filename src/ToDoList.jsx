@@ -6,11 +6,21 @@ import {
     Text,
     ScrollView  } from 'react-native';
 
-function ToDoList() {
+function ToDoList({ tasks = []}) {
+
     return (
         <>
         <ScrollView>
-        <Pressable>
+          {tasks.map((task, index) => (
+            <React.Fragment key={index}>
+                  <Pressable >
+              <View style={[styles.task]}>
+                <Text style={styles.taskText}>{task}</Text>
+              </View>
+            </Pressable>
+            </React.Fragment>
+          ))}
+        {/*<Pressable>
           <View style={[styles.task, styles.completed]}>
             <Text style={styles.taskText}>Do laundry</Text>
           </View>
@@ -24,7 +34,7 @@ function ToDoList() {
           <View style={[styles.task, styles.completed]}>
             <Text style={styles.taskText}>Walk dog</Text>
           </View>
-        </Pressable>
+          </Pressable>*/}
       </ScrollView>
         </>
     );
