@@ -22,7 +22,6 @@ function Home({ navigation }) {
         <ToDoList tasks={tasks} />
         <ToDoForm onAddTask={handleAddTask} />
         <ChuckNorrisFact />
-        
       </SafeAreaView>
     );
 }
