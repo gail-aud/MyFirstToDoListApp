@@ -3,6 +3,7 @@ import { SafeAreaView, Button } from 'react-native';
 
 import ToDoList from '../ToDoList';
 import ToDoForm from '../ToDoForm';
+import ChuckNorrisFact from '../ChuckNorrisFact';
 
 function Home({ navigation }) {
     const [ tasks, setTasks ] = React.useState([
@@ -15,18 +16,14 @@ function Home({ navigation }) {
     const handleAddTask = (task) => {
       setTasks([...tasks, task]);
     };
-    return(
-        <>
-              <SafeAreaView>
+
+    return (
+      <SafeAreaView>
         <ToDoList tasks={tasks} />
         <ToDoForm onAddTask={handleAddTask} />
-
-        <Button
-            title="Go to About"
-            onPress={() => navigation.navigate('About')}
-        />
+        <ChuckNorrisFact />
+        
       </SafeAreaView>
-        </>
     );
 }
 
